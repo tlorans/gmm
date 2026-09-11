@@ -11,8 +11,8 @@ wheels/
 
 # Quarto
 _book/
-.quarto/
-*.quarto_ipynb*
+/.quarto/
+**/*.quarto_ipynb
 
 # Data (licensed or large; see data/README.md)
 data/raw/
