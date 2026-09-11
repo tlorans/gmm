@@ -1,0 +1,527 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Empirical Finance, Reproduced",
+    "section": "",
+    "text": "Preface\nThis site is my chapter-by-chapter reproduction of the Lecture Notes for Empirical Finance (Lecture Notes for Empirical Finance, n.d.). Each page follows the structure of the notes and holds my own derivations, code, and results. Read the original notes here.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-build",
+    "href": "index.html#how-to-build",
+    "title": "Empirical Finance, Reproduced",
+    "section": "How to build",
+    "text": "How to build\nuv sync                 # install Python and the dependencies\nuv run quarto preview   # live preview while writing\nuv run quarto render    # full build into _book/\nCode runs only on my machine. Quarto saves the outputs in _freeze/, which is committed, so GitHub Actions can publish the site without Python or data.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#conventions",
+    "href": "index.html#conventions",
+    "title": "Empirical Finance, Reproduced",
+    "section": "Conventions",
+    "text": "Conventions\nLabel equations so other pages can refer to them. For example, a GMM estimator minimizes a quadratic form in the sample moments:\n\\[\n\\hat\\theta = \\arg\\min_\\theta \\; g_T(\\theta)' \\, W_T \\, g_T(\\theta),\n\\qquad\ng_T(\\theta) = \\frac{1}{T} \\sum_{t=1}^{T} f(x_t, \\theta).\n\\tag{1}\\]\nA reference to Equation 1 becomes a link. Shared code lives in src/gmm/ and is imported like any package:\n\nimport gmm\n\nprint(gmm.__version__)\n\n0.1.0\n\n\n\n\n\n\nLecture Notes for Empirical Finance. n.d. http://efinance.org.cn/cn/AP/lecture%20notes%20for%20empirical%20finance.pdf.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/01-gmm-mean-variance.html",
+    "href": "chapters/01-gmm-mean-variance.html",
+    "title": "1  GMM Estimation of Mean-Variance Frontier",
+    "section": "",
+    "text": "1.1 GMM Estimation of Means and Covariance Matrices\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>GMM Estimation of Mean-Variance Frontier</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-gmm-mean-variance.html#asymptotic-distribution-of-the-gmm-estimators",
+    "href": "chapters/01-gmm-mean-variance.html#asymptotic-distribution-of-the-gmm-estimators",
+    "title": "1  GMM Estimation of Mean-Variance Frontier",
+    "section": "1.2 Asymptotic Distribution of the GMM Estimators",
+    "text": "1.2 Asymptotic Distribution of the GMM Estimators\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>GMM Estimation of Mean-Variance Frontier</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-gmm-mean-variance.html#mean-variance-frontier",
+    "href": "chapters/01-gmm-mean-variance.html#mean-variance-frontier",
+    "title": "1  GMM Estimation of Mean-Variance Frontier",
+    "section": "1.3 Mean-Variance Frontier",
+    "text": "1.3 Mean-Variance Frontier\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>GMM Estimation of Mean-Variance Frontier</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-predicting-returns.html",
+    "href": "chapters/02-predicting-returns.html",
+    "title": "2  Predicting Asset Returns",
+    "section": "",
+    "text": "2.1 A Little Financial Theory and Predictability\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Predicting Asset Returns</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-predicting-returns.html#empirical-u.s.-evidence-on-stock-return-predictability",
+    "href": "chapters/02-predicting-returns.html#empirical-u.s.-evidence-on-stock-return-predictability",
+    "title": "2  Predicting Asset Returns",
+    "section": "2.2 Empirical U.S. Evidence on Stock Return Predictability",
+    "text": "2.2 Empirical U.S. Evidence on Stock Return Predictability\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Predicting Asset Returns</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-predicting-returns.html#prices-returns-and-predictability",
+    "href": "chapters/02-predicting-returns.html#prices-returns-and-predictability",
+    "title": "2  Predicting Asset Returns",
+    "section": "2.3 Prices, Returns, and Predictability",
+    "text": "2.3 Prices, Returns, and Predictability\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Predicting Asset Returns</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-predicting-returns.html#autocorrelations",
+    "href": "chapters/02-predicting-returns.html#autocorrelations",
+    "title": "2  Predicting Asset Returns",
+    "section": "2.4 Autocorrelations",
+    "text": "2.4 Autocorrelations\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Predicting Asset Returns</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-predicting-returns.html#other-predictors",
+    "href": "chapters/02-predicting-returns.html#other-predictors",
+    "title": "2  Predicting Asset Returns",
+    "section": "2.5 Other Predictors",
+    "text": "2.5 Other Predictors\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Predicting Asset Returns</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-predicting-returns.html#trading-strategies",
+    "href": "chapters/02-predicting-returns.html#trading-strategies",
+    "title": "2  Predicting Asset Returns",
+    "section": "2.6 Trading Strategies",
+    "text": "2.6 Trading Strategies\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Predicting Asset Returns</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-predicting-returns.html#maximally-predictable-portfolio",
+    "href": "chapters/02-predicting-returns.html#maximally-predictable-portfolio",
+    "title": "2  Predicting Asset Returns",
+    "section": "2.7 Maximally Predictable Portfolio",
+    "text": "2.7 Maximally Predictable Portfolio\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Predicting Asset Returns</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-linear-factor-models.html",
+    "href": "chapters/03-linear-factor-models.html",
+    "title": "3  Linear Factor Models",
+    "section": "",
+    "text": "3.1 Testing CAPM (Single Excess Return Factor)\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Linear Factor Models</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-linear-factor-models.html#testing-multi-factor-models-factors-are-excess-returns",
+    "href": "chapters/03-linear-factor-models.html#testing-multi-factor-models-factors-are-excess-returns",
+    "title": "3  Linear Factor Models",
+    "section": "3.2 Testing Multi-Factor Models (Factors are Excess Returns)",
+    "text": "3.2 Testing Multi-Factor Models (Factors are Excess Returns)\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Linear Factor Models</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-linear-factor-models.html#testing-multi-factor-models-general-factors",
+    "href": "chapters/03-linear-factor-models.html#testing-multi-factor-models-general-factors",
+    "title": "3  Linear Factor Models",
+    "section": "3.3 Testing Multi-Factor Models (General Factors)",
+    "text": "3.3 Testing Multi-Factor Models (General Factors)\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Linear Factor Models</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-linear-factor-models.html#fama-macbeth",
+    "href": "chapters/03-linear-factor-models.html#fama-macbeth",
+    "title": "3  Linear Factor Models",
+    "section": "3.4 Fama-MacBeth",
+    "text": "3.4 Fama-MacBeth\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Linear Factor Models</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04-sdf-vs-beta.html",
+    "href": "chapters/04-sdf-vs-beta.html",
+    "title": "4  Linear Factor Models: SDF vs Beta Methods",
+    "section": "",
+    "text": "4.1 Linear SDF \\(\\Leftrightarrow\\) Linear Factor Model\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Linear Factor Models: SDF vs Beta Methods</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04-sdf-vs-beta.html#estimating-explicit-sdf-models",
+    "href": "chapters/04-sdf-vs-beta.html#estimating-explicit-sdf-models",
+    "title": "4  Linear Factor Models: SDF vs Beta Methods",
+    "section": "4.2 Estimating Explicit SDF Models",
+    "text": "4.2 Estimating Explicit SDF Models\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Linear Factor Models: SDF vs Beta Methods</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04-sdf-vs-beta.html#sdf-models-versus-linear-factor-models-again",
+    "href": "chapters/04-sdf-vs-beta.html#sdf-models-versus-linear-factor-models-again",
+    "title": "4  Linear Factor Models: SDF vs Beta Methods",
+    "section": "4.3 SDF Models versus Linear Factor Models Again",
+    "text": "4.3 SDF Models versus Linear Factor Models Again\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Linear Factor Models: SDF vs Beta Methods</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04-sdf-vs-beta.html#conditional-sdf-models",
+    "href": "chapters/04-sdf-vs-beta.html#conditional-sdf-models",
+    "title": "4  Linear Factor Models: SDF vs Beta Methods",
+    "section": "4.4 Conditional SDF Models",
+    "text": "4.4 Conditional SDF Models\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Linear Factor Models: SDF vs Beta Methods</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-weighting-matrix.html",
+    "href": "chapters/05-weighting-matrix.html",
+    "title": "5  Weighting Matrix in GMM",
+    "section": "",
+    "text": "5.1 Arguments for a Prespecified Weighting Matrix\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Weighting Matrix in GMM</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-weighting-matrix.html#near-singularity-of-the-weighting-matrix",
+    "href": "chapters/05-weighting-matrix.html#near-singularity-of-the-weighting-matrix",
+    "title": "5  Weighting Matrix in GMM",
+    "section": "5.2 Near Singularity of the Weighting Matrix",
+    "text": "5.2 Near Singularity of the Weighting Matrix\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Weighting Matrix in GMM</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-weighting-matrix.html#very-different-variances",
+    "href": "chapters/05-weighting-matrix.html#very-different-variances",
+    "title": "5  Weighting Matrix in GMM",
+    "section": "5.3 Very Different Variances",
+    "text": "5.3 Very Different Variances\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Weighting Matrix in GMM</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-weighting-matrix.html#e-x_t-x_t-1-as-weighting-matrix",
+    "href": "chapters/05-weighting-matrix.html#e-x_t-x_t-1-as-weighting-matrix",
+    "title": "5  Weighting Matrix in GMM",
+    "section": "5.4 \\((E x_t x_t')^{-1}\\) as Weighting Matrix",
+    "text": "5.4 \\((E x_t x_t')^{-1}\\) as Weighting Matrix\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Weighting Matrix in GMM</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06-consumption-based.html",
+    "href": "chapters/06-consumption-based.html",
+    "title": "6  Consumption-Based Asset Pricing",
+    "section": "",
+    "text": "6.1 Introduction\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Consumption-Based Asset Pricing</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06-consumption-based.html#problems-with-the-consumption-based-asset-pricing-model",
+    "href": "chapters/06-consumption-based.html#problems-with-the-consumption-based-asset-pricing-model",
+    "title": "6  Consumption-Based Asset Pricing",
+    "section": "6.2 Problems with the Consumption-Based Asset Pricing Model",
+    "text": "6.2 Problems with the Consumption-Based Asset Pricing Model\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Consumption-Based Asset Pricing</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06-consumption-based.html#assets-in-simulation-models",
+    "href": "chapters/06-consumption-based.html#assets-in-simulation-models",
+    "title": "6  Consumption-Based Asset Pricing",
+    "section": "6.3 Assets in Simulation Models",
+    "text": "6.3 Assets in Simulation Models\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Consumption-Based Asset Pricing</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06-consumption-based.html#summary",
+    "href": "chapters/06-consumption-based.html#summary",
+    "title": "6  Consumption-Based Asset Pricing",
+    "section": "6.4 Summary",
+    "text": "6.4 Summary\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Consumption-Based Asset Pricing</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07-arch-garch.html",
+    "href": "chapters/07-arch-garch.html",
+    "title": "7  ARCH and GARCH",
+    "section": "",
+    "text": "7.1 Test of ARCH Effects\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ARCH and GARCH</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07-arch-garch.html#arch-models",
+    "href": "chapters/07-arch-garch.html#arch-models",
+    "title": "7  ARCH and GARCH",
+    "section": "7.2 ARCH Models",
+    "text": "7.2 ARCH Models\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ARCH and GARCH</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07-arch-garch.html#garch-models",
+    "href": "chapters/07-arch-garch.html#garch-models",
+    "title": "7  ARCH and GARCH",
+    "section": "7.3 GARCH Models",
+    "text": "7.3 GARCH Models\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ARCH and GARCH</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07-arch-garch.html#non-linear-extensions",
+    "href": "chapters/07-arch-garch.html#non-linear-extensions",
+    "title": "7  ARCH and GARCH",
+    "section": "7.4 Non-Linear Extensions",
+    "text": "7.4 Non-Linear Extensions\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ARCH and GARCH</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07-arch-garch.html#garch-m",
+    "href": "chapters/07-arch-garch.html#garch-m",
+    "title": "7  ARCH and GARCH",
+    "section": "7.5 (G)ARCH-M",
+    "text": "7.5 (G)ARCH-M\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ARCH and GARCH</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07-arch-garch.html#multivariate-garch",
+    "href": "chapters/07-arch-garch.html#multivariate-garch",
+    "title": "7  ARCH and GARCH",
+    "section": "7.6 Multivariate (G)ARCH",
+    "text": "7.6 Multivariate (G)ARCH\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>ARCH and GARCH</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/08-garch-applications.html",
+    "href": "chapters/08-garch-applications.html",
+    "title": "8  Financial Applications of ARCH and GARCH Models",
+    "section": "",
+    "text": "8.1 Bansal and Lundblad, “Fundamental Values and Asset Returns in Global Equity Markets”\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Financial Applications of ARCH and GARCH Models</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/08-garch-applications.html#heston-and-nandi-a-closed-form-garch-option-valuation-model",
+    "href": "chapters/08-garch-applications.html#heston-and-nandi-a-closed-form-garch-option-valuation-model",
+    "title": "8  Financial Applications of ARCH and GARCH Models",
+    "section": "8.2 Heston and Nandi, “A Closed-Form GARCH Option Valuation Model”",
+    "text": "8.2 Heston and Nandi, “A Closed-Form GARCH Option Valuation Model”\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Financial Applications of ARCH and GARCH Models</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/09-short-rates.html",
+    "href": "chapters/09-short-rates.html",
+    "title": "9  Models of Short Interest Rates",
+    "section": "",
+    "text": "9.1 SDF and Yield Curve Models\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Models of Short Interest Rates</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/09-short-rates.html#chan-et-al.-1992-an-empirical-comparison-of-alternative-models-of-the-short-term-interest-rate",
+    "href": "chapters/09-short-rates.html#chan-et-al.-1992-an-empirical-comparison-of-alternative-models-of-the-short-term-interest-rate",
+    "title": "9  Models of Short Interest Rates",
+    "section": "9.2 Chan et al. (1992), “An Empirical Comparison of Alternative Models of the Short-Term Interest Rate”",
+    "text": "9.2 Chan et al. (1992), “An Empirical Comparison of Alternative Models of the Short-Term Interest Rate”\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Models of Short Interest Rates</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10-kernel-estimation.html",
+    "href": "chapters/10-kernel-estimation.html",
+    "title": "10  Kernel Density Estimation and Regression",
+    "section": "",
+    "text": "10.1 Non-Parametric Regression\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Kernel Density Estimation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10-kernel-estimation.html#estimating-and-testing-distributions",
+    "href": "chapters/10-kernel-estimation.html#estimating-and-testing-distributions",
+    "title": "10  Kernel Density Estimation and Regression",
+    "section": "10.2 Estimating and Testing Distributions",
+    "text": "10.2 Estimating and Testing Distributions\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Kernel Density Estimation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10-kernel-estimation.html#aït-sahalia-1996-testing-continuous-time-models-of-the-spot-interest-rate",
+    "href": "chapters/10-kernel-estimation.html#aït-sahalia-1996-testing-continuous-time-models-of-the-spot-interest-rate",
+    "title": "10  Kernel Density Estimation and Regression",
+    "section": "10.3 Aït-Sahalia (1996), “Testing Continuous-Time Models of the Spot Interest Rate”",
+    "text": "10.3 Aït-Sahalia (1996), “Testing Continuous-Time Models of the Spot Interest Rate”\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Kernel Density Estimation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10-kernel-estimation.html#aït-sahalia-and-lo-1998-nonparametric-estimation-of-state-price-densities-implicit-in-financial-asset-prices",
+    "href": "chapters/10-kernel-estimation.html#aït-sahalia-and-lo-1998-nonparametric-estimation-of-state-price-densities-implicit-in-financial-asset-prices",
+    "title": "10  Kernel Density Estimation and Regression",
+    "section": "10.4 Aït-Sahalia and Lo (1998), “Nonparametric Estimation of State-Price Densities Implicit in Financial Asset Prices”",
+    "text": "10.4 Aït-Sahalia and Lo (1998), “Nonparametric Estimation of State-Price Densities Implicit in Financial Asset Prices”\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Kernel Density Estimation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11-finite-difference.html",
+    "href": "chapters/11-finite-difference.html",
+    "title": "11  Finite-Difference Solution of Option Prices",
+    "section": "",
+    "text": "11.1 Black-Scholes\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Finite-Difference Solution of Option Prices</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11-finite-difference.html#finite-difference-methods",
+    "href": "chapters/11-finite-difference.html#finite-difference-methods",
+    "title": "11  Finite-Difference Solution of Option Prices",
+    "section": "11.2 Finite-Difference Methods",
+    "text": "11.2 Finite-Difference Methods\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Finite-Difference Solution of Option Prices</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11-finite-difference.html#early-exercise",
+    "href": "chapters/11-finite-difference.html#early-exercise",
+    "title": "11  Finite-Difference Solution of Option Prices",
+    "section": "11.3 Early Exercise",
+    "text": "11.3 Early Exercise\nTo reproduce.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Finite-Difference Solution of Option Prices</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Reading list",
+    "section": "",
+    "text": "Lecture Notes for Empirical Finance. n.d. http://efinance.org.cn/cn/AP/lecture%20notes%20for%20empirical%20finance.pdf.",
+    "crumbs": [
+      "Reading list"
+    ]
+  },
+  {
+    "objectID": "appendices/a-rational-expectations.html",
+    "href": "appendices/a-rational-expectations.html",
+    "title": "Appendix A — Testing Rational Expectations",
+    "section": "",
+    "text": "To reproduce.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Testing Rational Expectations</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/b-gmm-coding.html",
+    "href": "appendices/b-gmm-coding.html",
+    "title": "Appendix B — Coding the GMM Problem in Section 3.2",
+    "section": "",
+    "text": "B.1 Exactly Identified System\nTo reproduce.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Coding the GMM Problem in Section 3.2</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/b-gmm-coding.html#overidentified-system",
+    "href": "appendices/b-gmm-coding.html#overidentified-system",
+    "title": "Appendix B — Coding the GMM Problem in Section 3.2",
+    "section": "B.2 Overidentified System",
+    "text": "B.2 Overidentified System\nTo reproduce.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Coding the GMM Problem in Section 3.2</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/c-data.html",
+    "href": "appendices/c-data.html",
+    "title": "Appendix C — Data",
+    "section": "",
+    "text": "The datasets used on this site, with their sources and licenses, are listed in data/README.md.\nTo reproduce.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Data</span>"
+    ]
+  },
+  {
+    "objectID": "appendices/d-econometrics.html",
+    "href": "appendices/d-econometrics.html",
+    "title": "Appendix D — Econometrics",
+    "section": "",
+    "text": "To reproduce.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Econometrics</span>"
+    ]
+  }
+]
