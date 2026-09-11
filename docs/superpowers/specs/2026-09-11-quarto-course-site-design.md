@@ -1,7 +1,7 @@
 # Course reproduction site: design
 
 Date: 2026-09-11
-Status: approved in chat, pending spec review
+Status: approved and implemented 2026-09-11
 
 ## Goal
 
@@ -121,15 +121,17 @@ Existing uv entries, plus `_book/`, `.quarto/`, `data/raw/`, `*.quarto_ipynb*`.
 - Steps: `actions/checkout`, `quarto-dev/quarto-actions/setup` (Quarto 1.9.29),
   `quarto-dev/quarto-actions/publish` with `target: gh-pages`.
 - No Python in CI. A page with unfrozen code fails the build instead of publishing.
+- `concurrency: pages` so two quick pushes publish in order.
 
 One-time steps on my machine, after the first commit:
 
 1. Push `main`.
-2. `uv run quarto publish gh-pages --no-prompt`. This creates the `gh-pages` branch and
-   `_publish.yml`.
-3. Check Pages with `gh api repos/tlorans/gmm/pages`. If it is not enabled, set the source:
+2. Create an empty `gh-pages` branch (`--no-prompt` cannot create a missing branch):
+   `git push origin "$(git commit-tree "$(git hash-object -t tree /dev/null)" -m "Initialise gh-pages branch"):refs/heads/gh-pages"`.
+3. `uv run quarto publish gh-pages --no-prompt`. Quarto writes no `_publish.yml` for this target.
+4. Check Pages with `gh api repos/tlorans/gmm/pages`. If it is not enabled, set the source:
    `gh api -X POST repos/tlorans/gmm/pages -f "source[branch]=gh-pages" -f "source[path]=/"`.
-4. Commit `_publish.yml` and push, so the workflow runs.
+5. Add the workflow and push, so it runs.
 
 ## Verification
 

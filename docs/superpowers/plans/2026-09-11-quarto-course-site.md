@@ -23,7 +23,7 @@
   Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
   Claude-Session: https://claude.ai/code/session_01FCC4HmcjVQr6khXhkSuH1t
   ```
-- Addition to the spec: `.gitattributes` forces LF line endings. This machine has `core.autocrlf=true`; CRLF files locally and LF files in CI would give different freeze hashes, and CI would then try to run Python and fail.
+- Addition to the spec: `.gitattributes` forces LF line endings, for consistent diffs across Windows and CI. (Quarto 1.9.29 normalizes line endings before computing freeze hashes, so this is not needed for freeze.)
 
 ---
 
@@ -610,7 +610,7 @@ Expected: `git status --short` prints nothing.
 
 **Files:**
 - Create: `.github/workflows/publish.yml`
-- Create (generated): `_publish.yml`
+- Note: Quarto writes no `_publish.yml` for the gh-pages target.
 
 **Interfaces:**
 - Consumes: the committed book and `_freeze/` from Task 2.
@@ -631,8 +631,12 @@ Expected: `main`
 
 - [ ] **Step 3: First publish from this machine**
 
-Run: `uv run quarto publish gh-pages --no-prompt`
-Expected: renders, pushes the `gh-pages` branch, creates `_publish.yml`.
+First create the empty branch, because `--no-prompt` cannot create a missing branch:
+
+Run: `git push origin "$(git commit-tree "$(git hash-object -t tree /dev/null)" -m "Initialise gh-pages branch"):refs/heads/gh-pages"`
+
+Then run: `uv run quarto publish gh-pages --no-prompt`
+Expected: renders and pushes to the `gh-pages` branch.
 
 Run: `git ls-remote --heads origin gh-pages`
 Expected: one line ending in `refs/heads/gh-pages`.
@@ -661,6 +665,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -684,7 +692,7 @@ jobs:
 - [ ] **Step 6: Commit and push**
 
 ```bash
-git add .github/workflows/publish.yml _publish.yml
+git add .github/workflows/publish.yml
 git commit -m "Publish the site with GitHub Actions" -m "Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01FCC4HmcjVQr6khXhkSuH1t"
 git push

@@ -1,7 +1,7 @@
 [project]
 name = "gmm"
 version = "0.1.0"
-description = "Add your description here"
+description = "Reproduction of the Lecture Notes for Empirical Finance as a Quarto book"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
