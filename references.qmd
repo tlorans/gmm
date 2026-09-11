@@ -1,0 +1,9 @@
+# Reading list {.unnumbered}
+
+<!-- Topic groups from the notes, to fill with citations:
+Background; GMM; Predictability of Asset Returns; Linear Factor Models;
+Consumption-Based Asset Pricing; Models of Changing Volatility;
+Interest Rate Models; Testing Distributions and Kernel Regressions -->
+
+::: {#refs}
+:::

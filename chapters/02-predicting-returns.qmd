@@ -1,0 +1,29 @@
+# Predicting Asset Returns
+
+## A Little Financial Theory and Predictability
+
+To reproduce.
+
+## Empirical U.S. Evidence on Stock Return Predictability
+
+To reproduce.
+
+## Prices, Returns, and Predictability
+
+To reproduce.
+
+## Autocorrelations
+
+To reproduce.
+
+## Other Predictors
+
+To reproduce.
+
+## Trading Strategies
+
+To reproduce.
+
+## Maximally Predictable Portfolio
+
+To reproduce.

@@ -1,0 +1,9 @@
+# Models of Short Interest Rates
+
+## SDF and Yield Curve Models
+
+To reproduce.
+
+## Chan et al. (1992), "An Empirical Comparison of Alternative Models of the Short-Term Interest Rate"
+
+To reproduce.

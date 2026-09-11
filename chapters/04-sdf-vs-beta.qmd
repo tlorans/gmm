@@ -1,0 +1,17 @@
+# Linear Factor Models: SDF vs Beta Methods
+
+## Linear SDF $\Leftrightarrow$ Linear Factor Model
+
+To reproduce.
+
+## Estimating Explicit SDF Models
+
+To reproduce.
+
+## SDF Models versus Linear Factor Models Again
+
+To reproduce.
+
+## Conditional SDF Models
+
+To reproduce.

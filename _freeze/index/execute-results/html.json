@@ -1,0 +1,12 @@
+{
+  "hash": "58aaa4a4fb93ea7a4939d44d31b22c7b",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Preface {.unnumbered}\n\nThis site is my chapter-by-chapter reproduction of the *Lecture Notes for Empirical\nFinance* [@empirical-finance-notes]. Each page follows the structure of the notes and\nholds my own derivations, code, and results. Read the original notes\n[here](http://efinance.org.cn/cn/AP/lecture%20notes%20for%20empirical%20finance.pdf).\n\n## How to build {.unnumbered}\n\n```bash\nuv sync                 # install Python and the dependencies\nuv run quarto preview   # live preview while writing\nuv run quarto render    # full build into _book/\n```\n\nCode runs only on my machine. Quarto saves the outputs in `_freeze/`, which is\ncommitted, so GitHub Actions can publish the site without Python or data.\n\n## Conventions {.unnumbered}\n\nLabel equations so other pages can refer to them. For example, a GMM estimator\nminimizes a quadratic form in the sample moments:\n\n$$\n\\hat\\theta = \\arg\\min_\\theta \\; g_T(\\theta)' \\, W_T \\, g_T(\\theta),\n\\qquad\ng_T(\\theta) = \\frac{1}{T} \\sum_{t=1}^{T} f(x_t, \\theta).\n$$ {#eq-gmm}\n\nA reference to @eq-gmm becomes a link. Shared code lives in `src/gmm/` and is imported\nlike any package:\n\n::: {#001babf6 .cell execution_count=1}\n``` {.python .cell-code}\nimport gmm\n\nprint(gmm.__version__)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n0.1.0\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

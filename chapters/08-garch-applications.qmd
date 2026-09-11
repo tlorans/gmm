@@ -1,0 +1,9 @@
+# Financial Applications of ARCH and GARCH Models
+
+## Bansal and Lundblad, "Fundamental Values and Asset Returns in Global Equity Markets"
+
+To reproduce.
+
+## Heston and Nandi, "A Closed-Form GARCH Option Valuation Model"
+
+To reproduce.

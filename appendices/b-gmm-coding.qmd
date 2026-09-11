@@ -1,0 +1,9 @@
+# Coding the GMM Problem in Section 3.2
+
+## Exactly Identified System
+
+To reproduce.
+
+## Overidentified System
+
+To reproduce.

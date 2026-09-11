@@ -1,0 +1,17 @@
+# Consumption-Based Asset Pricing
+
+## Introduction
+
+To reproduce.
+
+## Problems with the Consumption-Based Asset Pricing Model
+
+To reproduce.
+
+## Assets in Simulation Models
+
+To reproduce.
+
+## Summary
+
+To reproduce.

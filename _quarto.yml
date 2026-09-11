@@ -1,0 +1,45 @@
+project:
+  type: book
+  output-dir: _book
+  render:
+    - index.qmd
+    - chapters/*.qmd
+    - appendices/*.qmd
+    - references.qmd
+
+book:
+  title: "Empirical Finance, Reproduced"
+  author: "Thomas Lorans"
+  site-url: https://tlorans.github.io/gmm/
+  repo-url: https://github.com/tlorans/gmm
+  repo-actions: [source]
+  chapters:
+    - index.qmd
+    - chapters/01-gmm-mean-variance.qmd
+    - chapters/02-predicting-returns.qmd
+    - chapters/03-linear-factor-models.qmd
+    - chapters/04-sdf-vs-beta.qmd
+    - chapters/05-weighting-matrix.qmd
+    - chapters/06-consumption-based.qmd
+    - chapters/07-arch-garch.qmd
+    - chapters/08-garch-applications.qmd
+    - chapters/09-short-rates.qmd
+    - chapters/10-kernel-estimation.qmd
+    - chapters/11-finite-difference.qmd
+    - references.qmd
+  appendices:
+    - appendices/a-rational-expectations.qmd
+    - appendices/b-gmm-coding.qmd
+    - appendices/c-data.qmd
+    - appendices/d-econometrics.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    html-math-method: mathjax
+    number-sections: true
+
+execute:
+  freeze: auto

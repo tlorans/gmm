@@ -1,0 +1,17 @@
+# Linear Factor Models
+
+## Testing CAPM (Single Excess Return Factor)
+
+To reproduce.
+
+## Testing Multi-Factor Models (Factors are Excess Returns)
+
+To reproduce.
+
+## Testing Multi-Factor Models (General Factors)
+
+To reproduce.
+
+## Fama-MacBeth
+
+To reproduce.

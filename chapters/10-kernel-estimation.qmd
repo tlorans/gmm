@@ -1,0 +1,17 @@
+# Kernel Density Estimation and Regression
+
+## Non-Parametric Regression
+
+To reproduce.
+
+## Estimating and Testing Distributions
+
+To reproduce.
+
+## Aït-Sahalia (1996), "Testing Continuous-Time Models of the Spot Interest Rate"
+
+To reproduce.
+
+## Aït-Sahalia and Lo (1998), "Nonparametric Estimation of State-Price Densities Implicit in Financial Asset Prices"
+
+To reproduce.

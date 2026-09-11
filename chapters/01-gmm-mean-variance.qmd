@@ -1,0 +1,13 @@
+# GMM Estimation of Mean-Variance Frontier
+
+## GMM Estimation of Means and Covariance Matrices
+
+To reproduce.
+
+## Asymptotic Distribution of the GMM Estimators
+
+To reproduce.
+
+## Mean-Variance Frontier
+
+To reproduce.

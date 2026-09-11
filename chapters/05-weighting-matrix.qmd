@@ -1,0 +1,17 @@
+# Weighting Matrix in GMM
+
+## Arguments for a Prespecified Weighting Matrix
+
+To reproduce.
+
+## Near Singularity of the Weighting Matrix
+
+To reproduce.
+
+## Very Different Variances
+
+To reproduce.
+
+## $(E x_t x_t')^{-1}$ as Weighting Matrix
+
+To reproduce.

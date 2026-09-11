@@ -1,0 +1,25 @@
+# ARCH and GARCH
+
+## Test of ARCH Effects
+
+To reproduce.
+
+## ARCH Models
+
+To reproduce.
+
+## GARCH Models
+
+To reproduce.
+
+## Non-Linear Extensions
+
+To reproduce.
+
+## (G)ARCH-M
+
+To reproduce.
+
+## Multivariate (G)ARCH
+
+To reproduce.

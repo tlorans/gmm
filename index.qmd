@@ -1,0 +1,37 @@
+# Preface {.unnumbered}
+
+This site is my chapter-by-chapter reproduction of the *Lecture Notes for Empirical
+Finance* [@empirical-finance-notes]. Each page follows the structure of the notes and
+holds my own derivations, code, and results. Read the original notes
+[here](http://efinance.org.cn/cn/AP/lecture%20notes%20for%20empirical%20finance.pdf).
+
+## How to build {.unnumbered}
+
+```bash
+uv sync                 # install Python and the dependencies
+uv run quarto preview   # live preview while writing
+uv run quarto render    # full build into _book/
+```
+
+Code runs only on my machine. Quarto saves the outputs in `_freeze/`, which is
+committed, so GitHub Actions can publish the site without Python or data.
+
+## Conventions {.unnumbered}
+
+Label equations so other pages can refer to them. For example, a GMM estimator
+minimizes a quadratic form in the sample moments:
+
+$$
+\hat\theta = \arg\min_\theta \; g_T(\theta)' \, W_T \, g_T(\theta),
+\qquad
+g_T(\theta) = \frac{1}{T} \sum_{t=1}^{T} f(x_t, \theta).
+$$ {#eq-gmm}
+
+A reference to @eq-gmm becomes a link. Shared code lives in `src/gmm/` and is imported
+like any package:
+
+```{python}
+import gmm
+
+print(gmm.__version__)
+```

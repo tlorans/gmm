@@ -1,0 +1,6 @@
+# Data
+
+The datasets used on this site, with their sources and licenses, are listed in
+[`data/README.md`](https://github.com/tlorans/gmm/blob/main/data/README.md).
+
+To reproduce.
