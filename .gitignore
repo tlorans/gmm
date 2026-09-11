@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Quarto
+_book/
+.quarto/
+*.quarto_ipynb*
+
+# Data (licensed or large; see data/README.md)
+data/raw/
