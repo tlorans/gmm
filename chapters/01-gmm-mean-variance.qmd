@@ -1,8 +1,53 @@
 # GMM Estimation of Mean-Variance Frontier
 
+These notes are about how we can use GMM and the delta method to estimate a mean-variance frontier and also calculate a confidence band for the frontier. The purpose is to provide a quick repetition of GMM and the delta method - and to teach you how to implement it in Python. The approach in these notes is threfore very practical. 
+
 ## GMM Estimation of Means and Covariance Matrices
 
-To reproduce.
+Let $R_t$ be a vector of net returns of $N$ assets. We want to estimate the mean vector and the covariance matrix. The moment conditions for the mean vector are:
+
+$$
+\mathbb{E}[R_t] - \mu = 0_{N\times1}
+$$
+
+and the moment conditions for the second moment matrix are:
+
+$$
+\mathbb{E} R_t R'_t-\Gamma = 0_{N \times N}
+$$
+
+Example 1. With $N=2$ we have:
+
+$$
+\mathbb{E} \begin{bmatrix}
+R_{1t} \\
+R_{2t}
+\end{bmatrix} - \begin{bmatrix}
+\mu_1 \\
+\mu_2
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+$$
+
+and 
+
+$$
+\mathbb{E}\begin{bmatrix}
+R^2_{1t} & R_{1t}R_{2t} \\
+R_{2t}R_{1t} & R^2_{2t}
+\end{bmatrix}
+-
+\begin{bmatrix}
+\Gamma_{11} & \Gamma_{12} \\
+\Gamma_{21} & \Gamma_{22}
+\end{bmatrix} = 
+\begin{bmatrix}
+0 & 0 \\
+0 & 0
+\end{bmatrix}
+$$
 
 ## Asymptotic Distribution of the GMM Estimators
 
