@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -264,9 +293,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>These notes are about how we can use GMM and the delta method to estimate a mean-variance frontier and also calculate a confidence band for the frontier. The purpose is to provide a quick repetition of GMM and the delta method - and to teach you how to implement it in Python. The approach in these notes is threfore very practical.</p>
 <section id="gmm-estimation-of-means-and-covariance-matrices" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="gmm-estimation-of-means-and-covariance-matrices"><span class="header-section-number">1.1</span> GMM Estimation of Means and Covariance Matrices</h2>
-<p>To reproduce.</p>
+<p>Let <span class="math inline">\(R_t\)</span> be a vector of net returns of <span class="math inline">\(N\)</span> assets. We want to estimate the mean vector and the covariance matrix. The moment conditions for the mean vector are:</p>
+<p><span class="math display">\[
+\mathbb{E}[R_t] - \mu = 0_{N\times1}
+\]</span></p>
+<p>and the moment conditions for the second moment matrix are:</p>
+<p><span class="math display">\[
+\mathbb{E} R_t R'_t-\Gamma = 0_{N \times N}
+\]</span></p>
+<p>Example 1. With <span class="math inline">\(N=2\)</span> we have:</p>
+<p><span class="math display">\[
+\mathbb{E} \begin{bmatrix}
+R_{1t} \\
+R_{2t}
+\end{bmatrix} - \begin{bmatrix}
+\mu_1 \\
+\mu_2
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\mathbb{E}\begin{bmatrix}
+R^2_{1t} &amp; R_{1t}R_{2t} \\
+R_{2t}R_{1t} &amp; R^2_{2t}
+\end{bmatrix}
+-
+\begin{bmatrix}
+\Gamma_{11} &amp; \Gamma_{12} \\
+\Gamma_{21} &amp; \Gamma_{22}
+\end{bmatrix} =
+\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 0
+\end{bmatrix}
+\]</span></p>
 </section>
 <section id="asymptotic-distribution-of-the-gmm-estimators" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="asymptotic-distribution-of-the-gmm-estimators"><span class="header-section-number">1.2</span> Asymptotic Distribution of the GMM Estimators</h2>

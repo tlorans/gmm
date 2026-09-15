@@ -34,7 +34,7 @@
     "href": "chapters/01-gmm-mean-variance.html",
     "title": "1  GMM Estimation of Mean-Variance Frontier",
     "section": "",
-    "text": "1.1 GMM Estimation of Means and Covariance Matrices\nTo reproduce.",
+    "text": "1.1 GMM Estimation of Means and Covariance Matrices\nThese notes are about how we can use GMM and the delta method to estimate a mean-variance frontier and also calculate a confidence band for the frontier. The purpose is to provide a quick repetition of GMM and the delta method - and to teach you how to implement it in Python. The approach in these notes is threfore very practical.\nLet \\(R_t\\) be a vector of net returns of \\(N\\) assets. We want to estimate the mean vector and the covariance matrix. The moment conditions for the mean vector are:\n\\[\n\\mathbb{E}[R_t] - \\mu = 0_{N\\times1}\n\\]\nand the moment conditions for the second moment matrix are:\n\\[\n\\mathbb{E} R_t R'_t-\\Gamma = 0_{N \\times N}\n\\]\nExample 1. With \\(N=2\\) we have:\n\\[\n\\mathbb{E} \\begin{bmatrix}\nR_{1t} \\\\\nR_{2t}\n\\end{bmatrix} - \\begin{bmatrix}\n\\mu_1 \\\\\n\\mu_2\n\\end{bmatrix} = \\begin{bmatrix}\n0 \\\\\n0\n\\end{bmatrix}\n\\]\nand\n\\[\n\\mathbb{E}\\begin{bmatrix}\nR^2_{1t} & R_{1t}R_{2t} \\\\\nR_{2t}R_{1t} & R^2_{2t}\n\\end{bmatrix}\n-\n\\begin{bmatrix}\n\\Gamma_{11} & \\Gamma_{12} \\\\\n\\Gamma_{21} & \\Gamma_{22}\n\\end{bmatrix} =\n\\begin{bmatrix}\n0 & 0 \\\\\n0 & 0\n\\end{bmatrix}\n\\]",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>GMM Estimation of Mean-Variance Frontier</span>"
     ]
