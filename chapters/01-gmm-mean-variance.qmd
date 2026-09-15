@@ -49,6 +49,50 @@ R_{2t}R_{1t} & R^2_{2t}
 \end{bmatrix}
 $$
 
+The second moment matrix is symmetrix and contains therefore only $N(N+1)/2$ unique elements. Although there is some book keeping involved in getting rid of the non-unique elements (and then getting back to the full second moment matrix again), it is often worth the troube - in particular if we later want to apply the delta method (take derivatives with respect to the parameters). The standard way of doing that is through the vech operator.
+
+Remark 2. (The vech operator). $vech(A)$ where $A$ is $m \times m$ gives an $m(m+1)/2 \times 1$ vector with the elements on and below the principal diagonal $A$ stacked on top of each other (column wise). For instance:
+
+$$
+vech \begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix} = 
+\begin{bmatrix}
+a_{11} \\
+a_{21} \\
+a_{22}
+\end{bmatrix}
+$$
+
+Remark 3. (Duplication matrix). The duplication matrix $D_m$ is defined such that for any symmetric $m \times m$ matrix $A$ we have $vec(A) = D_m vech(A)$. The duplication matrix is therefore useful for "inverting" the vech operator (the step from $vec(A)$ to $A^$ is trivial). For instance, to continue the example of the vech operator:
+
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+a_{11} \\
+a_{21} \\
+a_{22}
+\end{bmatrix}
+= \begin{bmatrix}
+a_{11} \\ 
+a_{21} \\
+a_{21} \\
+a_{22}
+\end{bmatrix}
+$$
+
+or
+ 
+$$
+D_2 vech(A) = vec(A)
+$$
+
 ## Asymptotic Distribution of the GMM Estimators
 
 To reproduce.
