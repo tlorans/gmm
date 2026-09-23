@@ -49,12 +49,12 @@ R_{2t}R_{1t} & R^2_{2t}
 \end{bmatrix}
 $$ {#eq-4}
 
-The second moment matrix is symmetrix and contains therefore only $N(N+1)/2$ unique elements. Although there is some book keeping involved in getting rid of the non-unique elements (and then getting back to the full second moment matrix again), it is often worth the troube - in particular if we later want to apply the delta method (take derivatives with respect to the parameters). The standard way of doing that is through the vech operator.
+The second moment matrix is symmetrix and contains therefore only $N(N+1)/2$ unique elements. Although there is some book keeping involved in getting rid of the non-unique elements (and then getting back to the full second moment matrix again), it is often worth the troube - in particular if we later want to apply the delta method (take derivatives with respect to the parameters). The standard way of doing that is through the $\text{vech}$ operator.
 
-Remark 2. (The vech operator). $vech(A)$ where $A$ is $m \times m$ gives an $m(m+1)/2 \times 1$ vector with the elements on and below the principal diagonal $A$ stacked on top of each other (column wise). For instance:
+Remark 2. (The vech operator). $\text{vech}(A)$ where $A$ is $m \times m$ gives an $m(m+1)/2 \times 1$ vector with the elements on and below the principal diagonal $A$ stacked on top of each other (column wise). For instance:
 
 $$
-vech \begin{bmatrix}
+\text{vech} \begin{bmatrix}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
 \end{bmatrix} = 
@@ -65,7 +65,7 @@ a_{22}
 \end{bmatrix}
 $$ {#eq-5}
 
-Remark 3. (Duplication matrix). The duplication matrix $D_m$ is defined such that for any symmetric $m \times m$ matrix $A$ we have $vec(A) = D_m vech(A)$. The duplication matrix is therefore useful for "inverting" the vech operator (the step from $vec(A)$ to $A^{'}$ is trivial). For instance, to continue the example of the vech operator:
+Remark 3. (Duplication matrix). The duplication matrix $D_m$ is defined such that for any symmetric $m \times m$ matrix $A$ we have $vec(A) = D_m \text{vech}(A)$. The duplication matrix is therefore useful for "inverting" the vech operator (the step from $\text{vec}(A)$ to $A^{'}$ is trivial). For instance, to continue the example of the vech operator:
 
 $$
 \begin{bmatrix}
@@ -90,7 +90,7 @@ $$ {#eq-6}
 or
  
 $$
-D_2 vech(A) = vec(A)
+D_2 \text{vech}(A) = \text{vec}(A)
 $$ {#eq-7}
 
 We therefore pick out the unique elements in $$\mathbb{E}R_t R^{'}_t - \Gamma = 0_{N \times N}$$ by:
@@ -138,7 +138,11 @@ $$ {#eq-10}
 or 
 
 $$
+\frac{1}{T} \sum^{T}_{t=1} x_t - \hat{\beta} = 0
 $$
+
+Remark 5 (Python coding). Let $R$ be a $T \times N$ matrix with $R^{'}_t$ in row $t$. 
+Let $Z$ be a $T \times N(N+1)/2$ matrix with $\text{vech}(R_tR^{'}_t)'$ in row $t$. 
 
 ## Asymptotic Distribution of the GMM Estimators
 
