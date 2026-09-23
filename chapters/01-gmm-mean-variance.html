@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4c06c290d52c6f444f482897ca5578e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c59812dc4b7252543fb1ef09c0f56260.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -333,10 +333,10 @@ R_{2t}R_{1t} &amp; R^2_{2t}
 0 &amp; 0
 \end{bmatrix}
 \tag{1.4}\]</span></span></p>
-<p>The second moment matrix is symmetrix and contains therefore only <span class="math inline">\(N(N+1)/2\)</span> unique elements. Although there is some book keeping involved in getting rid of the non-unique elements (and then getting back to the full second moment matrix again), it is often worth the troube - in particular if we later want to apply the delta method (take derivatives with respect to the parameters). The standard way of doing that is through the vech operator.</p>
-<p>Remark 2. (The vech operator). <span class="math inline">\(vech(A)\)</span> where <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times m\)</span> gives an <span class="math inline">\(m(m+1)/2 \times 1\)</span> vector with the elements on and below the principal diagonal <span class="math inline">\(A\)</span> stacked on top of each other (column wise). For instance:</p>
+<p>The second moment matrix is symmetrix and contains therefore only <span class="math inline">\(N(N+1)/2\)</span> unique elements. Although there is some book keeping involved in getting rid of the non-unique elements (and then getting back to the full second moment matrix again), it is often worth the troube - in particular if we later want to apply the delta method (take derivatives with respect to the parameters). The standard way of doing that is through the <span class="math inline">\(\text{vech}\)</span> operator.</p>
+<p>Remark 2. (The vech operator). <span class="math inline">\(\text{vech}(A)\)</span> where <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times m\)</span> gives an <span class="math inline">\(m(m+1)/2 \times 1\)</span> vector with the elements on and below the principal diagonal <span class="math inline">\(A\)</span> stacked on top of each other (column wise). For instance:</p>
 <p><span id="eq-5"><span class="math display">\[
-vech \begin{bmatrix}
+\text{vech} \begin{bmatrix}
 a_{11} &amp; a_{12} \\
 a_{21} &amp; a_{22}
 \end{bmatrix} =
@@ -346,7 +346,7 @@ a_{21} \\
 a_{22}
 \end{bmatrix}
 \tag{1.5}\]</span></span></p>
-<p>Remark 3. (Duplication matrix). The duplication matrix <span class="math inline">\(D_m\)</span> is defined such that for any symmetric <span class="math inline">\(m \times m\)</span> matrix <span class="math inline">\(A\)</span> we have <span class="math inline">\(vec(A) = D_m vech(A)\)</span>. The duplication matrix is therefore useful for “inverting” the vech operator (the step from <span class="math inline">\(vec(A)\)</span> to <span class="math inline">\(A^{'}\)</span> is trivial). For instance, to continue the example of the vech operator:</p>
+<p>Remark 3. (Duplication matrix). The duplication matrix <span class="math inline">\(D_m\)</span> is defined such that for any symmetric <span class="math inline">\(m \times m\)</span> matrix <span class="math inline">\(A\)</span> we have <span class="math inline">\(vec(A) = D_m \text{vech}(A)\)</span>. The duplication matrix is therefore useful for “inverting” the vech operator (the step from <span class="math inline">\(\text{vec}(A)\)</span> to <span class="math inline">\(A^{'}\)</span> is trivial). For instance, to continue the example of the vech operator:</p>
 <p><span id="eq-6"><span class="math display">\[
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 \\
@@ -368,7 +368,7 @@ a_{22}
 \tag{1.6}\]</span></span></p>
 <p>or</p>
 <p><span id="eq-7"><span class="math display">\[
-D_2 vech(A) = vec(A)
+D_2 \text{vech}(A) = \text{vec}(A)
 \tag{1.7}\]</span></span></p>
 <p>We therefore pick out the unique elements in <span class="math display">\[\mathbb{E}R_t R^{'}_t - \Gamma = 0_{N \times N}\]</span> by:</p>
 <p><span id="eq-8"><span class="math display">\[
@@ -407,7 +407,9 @@ R^2_{2t}
 \tag{1.10}\]</span></span></p>
 <p>or</p>
 <p><span class="math display">\[
+\frac{1}{T} \sum^{T}_{t=1} x_t - \hat{\beta} = 0
 \]</span></p>
+<p>Remark 5 (Python coding). Let <span class="math inline">\(R\)</span> be a <span class="math inline">\(T \times N\)</span> matrix with <span class="math inline">\(R^{'}_t\)</span> in row <span class="math inline">\(t\)</span>. Let <span class="math inline">\(Z\)</span> be a <span class="math inline">\(T \times N(N+1)/2\)</span> matrix with <span class="math inline">\(\text{vech}(R_tR^{'}_t)'\)</span> in row <span class="math inline">\(t\)</span>.</p>
 </section>
 <section id="asymptotic-distribution-of-the-gmm-estimators" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="asymptotic-distribution-of-the-gmm-estimators"><span class="header-section-number">1.2</span> Asymptotic Distribution of the GMM Estimators</h2>
