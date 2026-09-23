@@ -93,6 +93,44 @@ $$
 D_2 vech(A) = vec(A)
 $$
 
+We therefore pick out the unique elements in $$\mathbb{E}R_t R'_t - \Gamma = 0_{N \times N}$$ by:
+
+$$
+E \text{vech}(R_t R^'_t) - \text{vech}(\Gamma) = 0_{N(N+1)/2\times1}
+$$
+
+
+Example 4. Continuing the previous example, we get:
+$$
+\mathbb{E} \begin{bmatrix}
+R^2_{1t} \\
+R_{2t}R_{1t} \\
+R^2_{2t}
+\end{bmatrix}
+- \begin{bmatrix}
+\Gamma_{11} \\
+\Gamma_{21} \\
+\Gamma_{22}
+\end{bmatrix}
+= \begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}
+$$
+
+Stacking the first equation and the previous one, and substitute the sample mean for the population expectation to get the GMM estimator:
+
+$$
+\frac{1}{T} \sum^T_{t=1} \begin{bmatrix} R_t \\
+\text{vech}(R_tR'_t)
+\end{bmatrix}
+- \begin{bmatrix}
+\hat{\mu}
+
+\end{bmatrix}
+$$
+
 ## Asymptotic Distribution of the GMM Estimators
 
 To reproduce.
