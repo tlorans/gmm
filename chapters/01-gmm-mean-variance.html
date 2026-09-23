@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c59812dc4b7252543fb1ef09c0f56260.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4c06c290d52c6f444f482897ca5578e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -297,15 +297,15 @@ window.Quarto = {
 <section id="gmm-estimation-of-means-and-covariance-matrices" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="gmm-estimation-of-means-and-covariance-matrices"><span class="header-section-number">1.1</span> GMM Estimation of Means and Covariance Matrices</h2>
 <p>Let <span class="math inline">\(R_t\)</span> be a vector of net returns of <span class="math inline">\(N\)</span> assets. We want to estimate the mean vector and the covariance matrix. The moment conditions for the mean vector are:</p>
-<p><span class="math display">\[
+<p><span id="eq-1"><span class="math display">\[
 \mathbb{E}[R_t] - \mu = 0_{N\times1}
-\]</span></p>
+\tag{1.1}\]</span></span></p>
 <p>and the moment conditions for the second moment matrix are:</p>
-<p><span class="math display">\[
-\mathbb{E} R_t R'_t-\Gamma = 0_{N \times N}
-\]</span></p>
+<p><span id="eq-2"><span class="math display">\[
+\mathbb{E} R_t R^{'}_t-\Gamma = 0_{N \times N}
+\tag{1.2}\]</span></span></p>
 <p>Example 1. With <span class="math inline">\(N=2\)</span> we have:</p>
-<p><span class="math display">\[
+<p><span id="eq-3"><span class="math display">\[
 \mathbb{E} \begin{bmatrix}
 R_{1t} \\
 R_{2t}
@@ -316,9 +316,9 @@ R_{2t}
 0 \\
 0
 \end{bmatrix}
-\]</span></p>
+\tag{1.3}\]</span></span></p>
 <p>and</p>
-<p><span class="math display">\[
+<p><span id="eq-4"><span class="math display">\[
 \mathbb{E}\begin{bmatrix}
 R^2_{1t} &amp; R_{1t}R_{2t} \\
 R_{2t}R_{1t} &amp; R^2_{2t}
@@ -332,10 +332,10 @@ R_{2t}R_{1t} &amp; R^2_{2t}
 0 &amp; 0 \\
 0 &amp; 0
 \end{bmatrix}
-\]</span></p>
+\tag{1.4}\]</span></span></p>
 <p>The second moment matrix is symmetrix and contains therefore only <span class="math inline">\(N(N+1)/2\)</span> unique elements. Although there is some book keeping involved in getting rid of the non-unique elements (and then getting back to the full second moment matrix again), it is often worth the troube - in particular if we later want to apply the delta method (take derivatives with respect to the parameters). The standard way of doing that is through the vech operator.</p>
 <p>Remark 2. (The vech operator). <span class="math inline">\(vech(A)\)</span> where <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times m\)</span> gives an <span class="math inline">\(m(m+1)/2 \times 1\)</span> vector with the elements on and below the principal diagonal <span class="math inline">\(A\)</span> stacked on top of each other (column wise). For instance:</p>
-<p><span class="math display">\[
+<p><span id="eq-5"><span class="math display">\[
 vech \begin{bmatrix}
 a_{11} &amp; a_{12} \\
 a_{21} &amp; a_{22}
@@ -345,9 +345,9 @@ a_{11} \\
 a_{21} \\
 a_{22}
 \end{bmatrix}
-\]</span></p>
-<p>Remark 3. (Duplication matrix). The duplication matrix <span class="math inline">\(D_m\)</span> is defined such that for any symmetric <span class="math inline">\(m \times m\)</span> matrix <span class="math inline">\(A\)</span> we have <span class="math inline">\(vec(A) = D_m vech(A)\)</span>. The duplication matrix is therefore useful for “inverting” the vech operator (the step from <span class="math inline">\(vec(A)\)</span> to <span class="math inline">\(A^\)</span> is trivial). For instance, to continue the example of the vech operator:</p>
-<p><span class="math display">\[
+\tag{1.5}\]</span></span></p>
+<p>Remark 3. (Duplication matrix). The duplication matrix <span class="math inline">\(D_m\)</span> is defined such that for any symmetric <span class="math inline">\(m \times m\)</span> matrix <span class="math inline">\(A\)</span> we have <span class="math inline">\(vec(A) = D_m vech(A)\)</span>. The duplication matrix is therefore useful for “inverting” the vech operator (the step from <span class="math inline">\(vec(A)\)</span> to <span class="math inline">\(A^{'}\)</span> is trivial). For instance, to continue the example of the vech operator:</p>
+<p><span id="eq-6"><span class="math display">\[
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 \\
@@ -365,16 +365,16 @@ a_{21} \\
 a_{21} \\
 a_{22}
 \end{bmatrix}
-\]</span></p>
+\tag{1.6}\]</span></span></p>
 <p>or</p>
-<p><span class="math display">\[
+<p><span id="eq-7"><span class="math display">\[
 D_2 vech(A) = vec(A)
-\]</span></p>
-<p>We therefore pick out the unique elements in <span class="math display">\[\mathbb{E}R_t R'_t - \Gamma = 0_{N \times N}\]</span> by:</p>
-<p><span class="math display">\[
-E \text{vech}(R_t R^'_t) - \text{vech}(\Gamma) = 0_{N(N+1)/2\times1}
-\]</span></p>
-<p>Example 4. Continuing the previous example, we get: <span class="math display">\[
+\tag{1.7}\]</span></span></p>
+<p>We therefore pick out the unique elements in <span class="math display">\[\mathbb{E}R_t R^{'}_t - \Gamma = 0_{N \times N}\]</span> by:</p>
+<p><span id="eq-8"><span class="math display">\[
+E \text{vech}(R_t R^{'}_t) - \text{vech}(\Gamma) = 0_{N(N+1)/2\times1}
+\tag{1.8}\]</span></span></p>
+<p>Example 4. Continuing the previous example, we get: <span id="eq-9"><span class="math display">\[
 \mathbb{E} \begin{bmatrix}
 R^2_{1t} \\
 R_{2t}R_{1t} \\
@@ -390,16 +390,24 @@ R^2_{2t}
 0 \\
 0
 \end{bmatrix}
-\]</span></p>
+\tag{1.9}\]</span></span></p>
 <p>Stacking the first equation and the previous one, and substitute the sample mean for the population expectation to get the GMM estimator:</p>
-$$ ^T_{t=1}
-<span class="math display">\[\begin{bmatrix} R_t \\
-\text{vech}(R_tR'_t)
-\end{bmatrix}\]</span>
-<ul>
-<li>\begin{bmatrix} </li>
-</ul>
-<p>\end{bmatrix} $$</p>
+<p><span id="eq-10"><span class="math display">\[
+\frac{1}{T} \sum^T_{t=1} \begin{bmatrix} R_t \\
+\text{vech}(R_tR^{'}_t)
+\end{bmatrix}
+- \begin{bmatrix}
+\hat{\mu}
+\text{vech}(\hat{\Gamma})
+\end{bmatrix}
+= \begin{bmatrix}
+0_{N\times1} \\
+0_{N(N+1)/2\times1}
+\end{bmatrix}
+\tag{1.10}\]</span></span></p>
+<p>or</p>
+<p><span class="math display">\[
+\]</span></p>
 </section>
 <section id="asymptotic-distribution-of-the-gmm-estimators" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="asymptotic-distribution-of-the-gmm-estimators"><span class="header-section-number">1.2</span> Asymptotic Distribution of the GMM Estimators</h2>
