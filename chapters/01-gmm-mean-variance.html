@@ -370,6 +370,36 @@ a_{22}
 <p><span class="math display">\[
 D_2 vech(A) = vec(A)
 \]</span></p>
+<p>We therefore pick out the unique elements in <span class="math display">\[\mathbb{E}R_t R'_t - \Gamma = 0_{N \times N}\]</span> by:</p>
+<p><span class="math display">\[
+E \text{vech}(R_t R^'_t) - \text{vech}(\Gamma) = 0_{N(N+1)/2\times1}
+\]</span></p>
+<p>Example 4. Continuing the previous example, we get: <span class="math display">\[
+\mathbb{E} \begin{bmatrix}
+R^2_{1t} \\
+R_{2t}R_{1t} \\
+R^2_{2t}
+\end{bmatrix}
+- \begin{bmatrix}
+\Gamma_{11} \\
+\Gamma_{21} \\
+\Gamma_{22}
+\end{bmatrix}
+= \begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}
+\]</span></p>
+<p>Stacking the first equation and the previous one, and substitute the sample mean for the population expectation to get the GMM estimator:</p>
+$$ ^T_{t=1}
+<span class="math display">\[\begin{bmatrix} R_t \\
+\text{vech}(R_tR'_t)
+\end{bmatrix}\]</span>
+<ul>
+<li>\begin{bmatrix} </li>
+</ul>
+<p>\end{bmatrix} $$</p>
 </section>
 <section id="asymptotic-distribution-of-the-gmm-estimators" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="asymptotic-distribution-of-the-gmm-estimators"><span class="header-section-number">1.2</span> Asymptotic Distribution of the GMM Estimators</h2>
