@@ -126,7 +126,7 @@ $$
 \text{vech}(R_tR^{'}_t)
 \end{bmatrix}
 - \begin{bmatrix}
-\hat{\mu}
+\hat{\mu} \\
 \text{vech}(\hat{\Gamma})
 \end{bmatrix}
 = \begin{bmatrix}
@@ -143,7 +143,27 @@ $$
 
 Remark 5 (Python coding). Let $R$ be a $T \times N$ matrix with $R^{'}_t$ in row $t$. 
 Let $Z$ be a $T \times N(N+1)/2$ matrix with $\text{vech}(R_tR^{'}_t)'$ in row $t$. 
-Then 
+Then
+```python
+beta_hat = np.mean(np.hstack([R,Z]), axis = 0) # 1-D array pf me,gth N + N (N+1) / 2
+beta_hat = beta_hat.reshape(-1,1)
+```
+calculates the column vector $\hat{\beta}$. To be concrete, if $T = 3$ and $N=2$, then the $R$ and $Z$ matrices are:
+
+$$
+R = \begin{bmatrix}
+R_{1t} & R_{2t} \\
+R_{1 t+1} & R_{2 t +1} \\
+R_{1 t +2} & R_{2 t +2}
+\end{bmatrix}
+$$
+
+and 
+
+$$
+Z = 
+
+
 
 ```{python}
 import numpy as np
