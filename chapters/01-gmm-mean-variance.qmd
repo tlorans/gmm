@@ -8,13 +8,13 @@ Let $R_t$ be a vector of net returns of $N$ assets. We want to estimate the mean
 
 $$
 \mathbb{E}[R_t] - \mu = 0_{N\times1}
-$$
+$$ {#eq-1}
 
 and the moment conditions for the second moment matrix are:
 
 $$
-\mathbb{E} R_t R'_t-\Gamma = 0_{N \times N}
-$$
+\mathbb{E} R_t R^{'}_t-\Gamma = 0_{N \times N}
+$$ {#eq-2}
 
 Example 1. With $N=2$ we have:
 
@@ -29,7 +29,7 @@ R_{2t}
 0 \\
 0
 \end{bmatrix}
-$$
+$$ {#eq-3}
 
 and 
 
@@ -47,7 +47,7 @@ R_{2t}R_{1t} & R^2_{2t}
 0 & 0 \\
 0 & 0
 \end{bmatrix}
-$$
+$$ {#eq-4}
 
 The second moment matrix is symmetrix and contains therefore only $N(N+1)/2$ unique elements. Although there is some book keeping involved in getting rid of the non-unique elements (and then getting back to the full second moment matrix again), it is often worth the troube - in particular if we later want to apply the delta method (take derivatives with respect to the parameters). The standard way of doing that is through the vech operator.
 
@@ -63,9 +63,9 @@ a_{11} \\
 a_{21} \\
 a_{22}
 \end{bmatrix}
-$$
+$$ {#eq-5}
 
-Remark 3. (Duplication matrix). The duplication matrix $D_m$ is defined such that for any symmetric $m \times m$ matrix $A$ we have $vec(A) = D_m vech(A)$. The duplication matrix is therefore useful for "inverting" the vech operator (the step from $vec(A)$ to $A^$ is trivial). For instance, to continue the example of the vech operator:
+Remark 3. (Duplication matrix). The duplication matrix $D_m$ is defined such that for any symmetric $m \times m$ matrix $A$ we have $vec(A) = D_m vech(A)$. The duplication matrix is therefore useful for "inverting" the vech operator (the step from $vec(A)$ to $A^{'}$ is trivial). For instance, to continue the example of the vech operator:
 
 $$
 \begin{bmatrix}
@@ -85,19 +85,19 @@ a_{21} \\
 a_{21} \\
 a_{22}
 \end{bmatrix}
-$$
+$$ {#eq-6}
 
 or
  
 $$
 D_2 vech(A) = vec(A)
-$$
+$$ {#eq-7}
 
-We therefore pick out the unique elements in $$\mathbb{E}R_t R'_t - \Gamma = 0_{N \times N}$$ by:
+We therefore pick out the unique elements in $$\mathbb{E}R_t R^{'}_t - \Gamma = 0_{N \times N}$$ by:
 
 $$
-E \text{vech}(R_t R^'_t) - \text{vech}(\Gamma) = 0_{N(N+1)/2\times1}
-$$
+E \text{vech}(R_t R^{'}_t) - \text{vech}(\Gamma) = 0_{N(N+1)/2\times1}
+$$ {#eq-8}
 
 
 Example 4. Continuing the previous example, we get:
@@ -117,18 +117,27 @@ R^2_{2t}
 0 \\
 0
 \end{bmatrix}
-$$
+$$ {#eq-9}
 
 Stacking the first equation and the previous one, and substitute the sample mean for the population expectation to get the GMM estimator:
 
 $$
 \frac{1}{T} \sum^T_{t=1} \begin{bmatrix} R_t \\
-\text{vech}(R_tR'_t)
+\text{vech}(R_tR^{'}_t)
 \end{bmatrix}
 - \begin{bmatrix}
 \hat{\mu}
-
+\text{vech}(\hat{\Gamma})
 \end{bmatrix}
+= \begin{bmatrix}
+0_{N\times1} \\
+0_{N(N+1)/2\times1}
+\end{bmatrix}
+$$ {#eq-10}
+
+or 
+
+$$
 $$
 
 ## Asymptotic Distribution of the GMM Estimators
